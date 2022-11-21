@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: myselfop
+  datasource:
+    # 连接已使用 jasypt 加密
+    url: ENC(BK3hCv7vLLMuSXoBzTAIVtPGfTDupILAvXEOASnSlNK3YYdTKsP/PV3QR9JgsyIbUegMo7Qq4QnA3hBak78R6SmVKLL8yrC8xO/Sli5ElOgNajj/Wx9OJ+Ih4PW17rKxM1pVvMdDWqJrtvQmUtt1eA==)
+    username: ENC(cs55DbDssletd5+yPqYQycAkwKL2KDmZl23/mx/+mtcu0q14UCcMbappv7YHkY1a)
+    password: ENC(3nhtjyzL8myUQ1nutaHCEgZVIwl4OqL2Qr+Jctd2NhOLNofDa5CXHlFF6u4DZCMj)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      ddl-auto: update
+server:
+  port: 8000
+
+# 使用 jasypt 加密数据库连接
+# 密文生成见：com.simwor.myselfop.util.JasyptUtilTest
+jasypt:
+  encryptor:
+    # 加密的盐值，为了安全，该配置可以放在启动参数或者命令行参数中
+    password: fa7bd4edd42448aea8c9484fbce6e8cd
+    # 加密所采用的算法
+    algorithm: PBEWITHHMACSHA512ANDAES_256
