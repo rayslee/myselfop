@@ -18,6 +18,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <jasypt.version>3.0.4</jasypt.version>
+        <volksbook-bean.version>1.0-SNAPSHOT</volksbook-bean.version>
     </properties>
 
     <dependencyManagement>
@@ -27,6 +28,11 @@
                 <groupId>com.github.ulisesbocchio</groupId>
                 <artifactId>jasypt-spring-boot-starter</artifactId>
                 <version>${jasypt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.simwor</groupId>
+                <artifactId>volksbook-bean</artifactId>
+                <version>${volksbook-bean.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -59,6 +65,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.simwor</groupId>
+            <artifactId>volksbook-bean</artifactId>
+            <version>${volksbook-bean.version}</version>
         </dependency>
 
         <dependency>
